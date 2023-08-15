@@ -48,8 +48,7 @@ if (selected == 'Diabetes Prediction'):
     with col3:
         BloodPressure = st.text_input('Blood Pressure value')
     
-    with col1:
-        SkinThickness = st.text_input('Skin Thickness value')
+    
     
     with col2:
         Insulin = st.text_input('Insulin Level')
@@ -57,8 +56,7 @@ if (selected == 'Diabetes Prediction'):
     with col3:
         BMI = st.text_input('BMI value')
     
-    with col1:
-        DiabetesPedigreeFunction = st.text_input('Diabetes Pedigree Function value')
+    
     
     with col2:
         Age = st.text_input('Age of the Person')
@@ -70,7 +68,7 @@ if (selected == 'Diabetes Prediction'):
     # creating a button for Prediction
     
     if st.button('Diabetes Test Result'):
-        diab_prediction = diabetes_model.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
+        diab_prediction = diabetes_model.predict([[Pregnancies, Glucose, BloodPressure, , Insulin, BMI,  Age]])
         
         if (diab_prediction[0] == 1):
           diab_diagnosis = 'The person is diabetic'
